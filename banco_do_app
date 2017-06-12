@@ -1,0 +1,31 @@
+CREATE DATABASE BD_CATALOGO; 
+
+USE BD_CATALOGO;
+
+CREATE TABLE TB_INGREDIENTES(
+ING_INGREDIENTE VARCHAR(50),
+ING_CODIGO INT NOT NULL AUTO_INCREMENT PRIMARY KEY
+);
+
+INSERT INTO TB_INGREDIENTES VALUES
+('sal',default),
+('óleo',default),
+('ovo',default),
+('açucar',default),
+('agua',default),
+('pimenta',default),
+('farinha',default);
+
+CREATE TABLE TB_RECEITAS(
+REC_RECEITA VARCHAR(500),
+REC_CODIGO INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+REC_ING_CODIGO INT NOT NULL,
+FOREIGN KEY (REC_ING_CODIGO) REFERENCES TB_INGREDIENTES(ING_CODIGO)
+);
+
+
+
+
+
+select * from tb_ingredientes;
+select * from tb_receitas;
